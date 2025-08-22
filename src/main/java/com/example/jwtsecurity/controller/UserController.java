@@ -58,29 +58,11 @@ public class UserController {
 	})
 				.orElse(null);
 	}
-	
-
 		//delete
 		@DeleteMapping("/{id}")
 		public String deleteUser(@PathVariable int id) {
 			userRepository.deleteById(id);
 			return "User deleted with id :" +id;
-			
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
