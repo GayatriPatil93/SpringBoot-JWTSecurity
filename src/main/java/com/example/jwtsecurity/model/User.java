@@ -1,11 +1,15 @@
 package com.example.jwtsecurity.model;
 
+import org.antlr.v4.runtime.misc.NotNull;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 
 
 @Entity
@@ -19,6 +23,8 @@ public class User {
 	private String username;
 	@Column(unique = true)
 	private String email;
+	@Valid
+	@NotBlank(message="Password cannot be empty")
 	private String password;
 	
 	
@@ -56,7 +62,5 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 	
 }
